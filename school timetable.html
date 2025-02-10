@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Flowers School</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: url('school.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        .container {
+            position: relative;
+            color: white;
+        }
+        #timetable {
+            display: none;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: black;
+            overflow-x: auto;
+        }
+        .table-container {
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+        }
+        table {
+            min-width: 900px;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th, td {
+            white-space: nowrap;
+            padding: 10px;
+            text-align: center;
+        }
+        thead th:first-child, tbody td:first-child {
+            position: sticky;
+            left: 0;
+            background: #343a40;
+            color: white;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Spring Flowers School</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="viewTimetable">View TimeTable</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5 text-center">
+        <h2>Welcome to Spring Flowers School</h2>
+        <p>Manage your school activities online.</p>
+        <button class="btn btn-primary" id="viewTimetableBtn">View TimeTable</button>
+    </div>
+
+    <section id="timetable" class="container mt-5">
+        <h3 class="text-center">Student Time Table</h3>
+        <div class="table-container">
+            <table class="table table-bordered table-striped mt-3">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Day</th>
+                        <th>9:00 - 9:45</th>
+                        <th>9:45 - 10:30</th>
+                        <th>10:30 - 11:15</th>
+                        <th>11:15 - 11:45 (Rest)</th>
+                        <th>11:45 - 12:30</th>
+                        <th>12:30 - 1:15</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Math</td>
+                        <td>Science</td>
+                        <td>English</td>
+                        <td>Rest</td>
+                        <td>History</td>
+                        <td>Computer Lab</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>Physics</td>
+                        <td>Chemistry</td>
+                        <td>Math</td>
+                        <td>Rest</td>
+                        <td>Geography</td>
+                        <td>Biology Lab</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>Biology</td>
+                        <td>Math</td>
+                        <td>English</td>
+                        <td>Rest</td>
+                        <td>Physics Lab</td>
+                        <td>Games</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>Geography</td>
+                        <td>Physics Lab</td>
+                        <td>Chemistry</td>
+                        <td>Rest</td>
+                        <td>Math</td>
+                        <td>English Lab</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>Math</td>
+                        <td>Computer Lab</td>
+                        <td>Science</td>
+                        <td>Rest</td>
+                        <td>History</td>
+                        <td>Art & Music</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("viewTimetableBtn").addEventListener("click", function() {
+            var timetable = document.getElementById("timetable");
+            timetable.style.display = (timetable.style.display === "none" || timetable.style.display === "") ? "block" : "none";
+        });
+    </script>
+</body>
+</html>
